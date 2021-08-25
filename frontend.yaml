@@ -30,7 +30,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: frontend
+          image: aseleem/frontend
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -67,8 +67,8 @@ spec:
           - name: AD_SERVICE_ADDR
             value: "adservice:9555"
           # # ENV_PLATFORM: One of: local, gcp, aws, azure, onprem, alibaba
-          # # When not set, defaults to "local" unless running in GKE, otherwies auto-sets to gcp 
-          # - name: ENV_PLATFORM 
+          # # When not set, defaults to "local" unless running in GKE, otherwies auto-sets to gcp
+          # - name: ENV_PLATFORM
           #   value: "aws"
           # - name: DISABLE_TRACING
           #   value: "1"
@@ -96,16 +96,18 @@ spec:
   - name: http
     port: 80
     targetPort: 8080
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: frontend-external
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: frontend
   ports:
   - name: http
     port: 80
     targetPort: 8080
+    nodePort: 32500

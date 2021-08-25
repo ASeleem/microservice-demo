@@ -23,7 +23,7 @@ spec:
   template:
     metadata:
       labels:
-        app: loadgenerator
+        app: aseleem/loadgenerator
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
