@@ -23,7 +23,7 @@ spec:
   template:
     metadata:
       labels:
-        app: aseleem/loadgenerator:1.0
+        app: loadgenerator
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
@@ -48,7 +48,7 @@ spec:
           value: "frontend:80"
       containers:
       - name: main
-        image: loadgenerator
+        image: aseleem/loadgenerator:1.0
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
