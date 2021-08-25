@@ -29,7 +29,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: aseleem/emailservice
+        image: aseleem/emailservice:1.0
         ports:
         - containerPort: 8080
         env:

@@ -29,7 +29,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: aseleem/productcatalogservice
+        image: aseleem/productcatalogservice:1.0
         ports:
         - containerPort: 3550
         env:

@@ -28,7 +28,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: aseleem/checkoutservice
+          image: aseleem/checkoutservice:1.0
           ports:
           - containerPort: 5050
           readinessProbe:

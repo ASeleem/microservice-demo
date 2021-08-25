@@ -30,7 +30,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: aseleem/frontend
+          image: aseleem/frontend:1.0
           ports:
           - containerPort: 8080
           readinessProbe:

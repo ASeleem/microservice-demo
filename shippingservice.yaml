@@ -28,7 +28,7 @@ spec:
       serviceAccountName: default
       containers:
       - name: server
-        image: aseleem/shippingservice
+        image: aseleem/shippingservice:1.0
         ports:
         - containerPort: 50051
         env:
